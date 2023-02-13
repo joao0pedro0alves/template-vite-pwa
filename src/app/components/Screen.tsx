@@ -7,7 +7,7 @@ interface ScreenProps {
 
 export function Screen({children, className}: ScreenProps) {
     return (
-        <div className={clsx(className, "flex flex-col w-screen h-screen m-auto max-w-lg bg-white sm:border sm:border-zinc-300 shadow-lg overflow-hidden")}>
+        <div className={clsx(className, "flex flex-col w-screen min-h-screen m-auto max-w-lg bg-white sm:border sm:border-zinc-300 shadow-lg")}>
             {children}
         </div>
     )
