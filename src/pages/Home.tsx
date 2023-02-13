@@ -1,11 +1,12 @@
 import { Button } from '../app/components/Button'
 import { Header } from '../app/components/Header'
+import { Screen } from '../app/components/Screen'
 
 import logoImage from '../assets/images/logo.png'
 
 export function Home() {
     return (
-        <div className="flex flex-col w-screen h-screen m-auto max-w-lg bg-white sm:border sm:border-zinc-300 shadow-lg overflow-hidden">
+        <Screen>
             <Header />
 
             <div className="p-4 flex-1">
@@ -27,10 +28,10 @@ export function Home() {
             </div>
 
             <footer className="p-4 border-t border-zinc-300 bg-zinc-200 flex justify-center">
-                <span className="text-xs text-center text-zinc-800">
+                <span className="text-xs text-center text-zinc-700">
                     © ECOSIS - EQUIPAMENTOS E CONSULTORIA EM SISTEMAS LTDA 2023
                 </span>
             </footer>
-        </div>
+        </Screen>
     )
 }

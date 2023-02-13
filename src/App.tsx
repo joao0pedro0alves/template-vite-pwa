@@ -1,13 +1,13 @@
-import { Divider } from './app/components/Divider'
-import { Home } from './pages/Home'
-import { Login } from './pages/Login'
+// import { Home } from './pages/Home'
+// import { Login } from './pages/Login'
+import { Conference } from './pages/tools/Conference'
 
 export default function App() {
     return (
         <main>
-            <Login />
-            <Divider />
-            <Home />
+            {/* <Login /> */}
+            {/* <Home /> */}
+            <Conference />
         </main>
     )
 }
