@@ -1,13 +1,15 @@
-// import { Home } from './pages/Home'
-// import { Login } from './pages/Login'
-import { Conference } from './pages/tools/Conference'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { AuthContextProvider } from './contexts/Auth'
+import { Routes } from './routes'
 
 export default function App() {
     return (
-        <main>
-            {/* <Login /> */}
-            {/* <Home /> */}
-            <Conference />
-        </main>
+        <Router>
+            <AuthContextProvider>
+                <main>
+                    <Routes />
+                </main>
+            </AuthContextProvider>
+        </Router>
     )
 }

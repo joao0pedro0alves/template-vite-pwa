@@ -1,10 +1,13 @@
-import { Button } from '../app/components/Button'
+import { MenuItem } from '../app/components/MenuItem'
 import { Header } from '../app/components/Header'
 import { Screen } from '../app/components/Screen'
 
 import logoImage from '../assets/images/logo.png'
+import { useAuth } from '../hooks/useAuth'
 
 export function Home() {
+    const { user } = useAuth()
+
     return (
         <Screen>
             <Header />
@@ -17,13 +20,13 @@ export function Home() {
                     alt="Logo"
                 />
                 <span className="mb-4 block sm:text-lg text-zinc-400 text-center">
-                    Bem vindo(a) <span className='text-emerald-500 font-semibold'>Gilmar Pereira</span>, escolha uma operação.
+                    Bem vindo(a) <span className='text-emerald-500 font-semibold'>{user.name}</span>, escolha uma operação.
                 </span>
 
                 <div className="flex flex-col gap-3">
-                    <Button>Conferência</Button>
-                    <Button>Separação de carga</Button>
-                    <Button disabled>Liberação de estoque</Button>
+                    <MenuItem to='/tools/conferencia'>Conferência</MenuItem>
+                    <MenuItem to='/tools/separacao'>Separação de carga</MenuItem>
+                    <MenuItem to='/' disabled>Liberação de estoque</MenuItem>
                 </div>
             </div>
 
