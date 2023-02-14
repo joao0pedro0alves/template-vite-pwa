@@ -1,36 +1,71 @@
+import { useState } from 'react'
+import clsx from 'clsx'
 import { Card } from '../components/Card'
 import { Switch } from '../components/Switch'
 
-export function ConferenceList() {
-    return (
-        <div className='flex-1'>
-            <Switch 
-                label='Todos/Pendentes'
-                id='show-completed'
-                defaultChecked
-            />
-            
-            <ul className="flex flex-col gap-3">
-                <Card
-                    title="PISO ESMALTADO AVÓRIO"
-                    highlight="Restante"
-                    highlightValue={0}
-                    completed
-                >
-                    <span>000001/23</span>
-                    <span className="pl-4">1 - 0 - 0003</span>
-                </Card>
+export interface Transaction {
+    dsc_abreviado: string
+    cod_produto: string
+    cod_pedido: string
+    ctm_qtd_etiq: number
+    ctm_qtd_etiq_baixada: number
+    bit_ton_lot: number
+}
+interface ConferenceListProps {
+    data: Transaction[]
+    showList?: boolean
+    loading?: boolean
+}
 
-                {Array.from({length: 10}).map((_, i) => (
+export function ConferenceList({
+    data = [],
+    showList,
+    loading,
+}: ConferenceListProps) {
+    const [allOrPending, setAllOrPending] = useState(false)
+
+    function isSample(item: Transaction) {
+        return item.cod_produto === 'AMOSTRAS'
+    }
+
+    function isCompleted(item: Transaction) {
+        return item.ctm_qtd_etiq - item.ctm_qtd_etiq_baixada === 0
+    }
+
+    const transactions = allOrPending ? data : data.filter(i => !isCompleted(i))
+
+    return (
+        <div className={clsx('flex-1 relative', { hidden: !showList })}>
+            <Switch
+                label="Pendentes/Todos"
+                id="show-completed"
+                checked={allOrPending}
+                onCheckedChange={setAllOrPending}
+            />
+
+            <ul
+                className={clsx('flex flex-col gap-2', {
+                    'animate-pulse': loading,
+                })}
+            >
+                {transactions.map((item, i) => (
                     <Card
-                        key={`uncompleted-card-${i}`}
-                        title="PISO ESMALTADO ZIRCO"
+                        key={`conference-card-${i}`}
+                        title={item.dsc_abreviado}
                         highlight="Restante"
-                        highlightValue={2}
-                        completed={false}
+                        highlightValue={
+                            item.ctm_qtd_etiq - item.ctm_qtd_etiq_baixada
+                        }
+                        completed={isCompleted(item)}
                     >
-                        <span>000001/23</span>
-                        <span className="pl-4">1 - 0 - 0003</span>
+                        {isSample(item) ? (
+                            <span className="text-sm">{item.cod_pedido}</span>
+                        ) : (
+                            <>
+                                <span className="text-sm">{item.cod_produto}</span>
+                                <span className="pl-2 text-sm">{item.bit_ton_lot}</span>
+                            </>
+                        )}
                     </Card>
                 ))}
             </ul>
