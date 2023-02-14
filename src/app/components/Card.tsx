@@ -16,7 +16,7 @@ export function Card({title, highlight, highlightValue, completed, children}: Ca
             <div className="col-span-3">
                 <span className="text-lg font-bold">{title}</span>
 
-                <div className="divide-x-2 flex gap-4">
+                <div className="divide-x flex gap-2">
                     {children}
                 </div>
             </div>

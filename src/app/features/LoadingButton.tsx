@@ -12,7 +12,7 @@ export function LoadingButton({loading, ...props}: LoadingButtonProps) {
             className='flex items-center justify-center'
             {...props}
         >
-            {loading ? <Spinner /> : props.children}
+            {loading ? <Spinner className='text-zinc-100 fill-zinc-300' /> : props.children}
         </Button>
     )
 }

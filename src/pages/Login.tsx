@@ -3,9 +3,10 @@ import { CaretRight } from 'phosphor-react'
 import { TextField } from '../app/components/TextField'
 import { useAuth } from '../hooks/useAuth'
 import { SignInCredencials } from '../contexts/Auth'
+import { LoadingButton } from '../app/features/LoadingButton'
 
 export function Login() {
-    const {signIn} = useAuth()
+    const {signIn, loading} = useAuth()
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -38,15 +39,16 @@ export function Login() {
                         placeholder='Senha'
                         disabled
                     />
-                    <button 
+                    <LoadingButton 
                         type='submit'
-                        className='bg-emerald-500 text-white p-3 rounded-sm font-semibold transition-colors hover:bg-emerald-600 flex justify-center items-center gap-4'
+                        loading={loading}
+                        className='flex justify-center items-center gap-2 font-semibold'
                     >
                         ENTRAR
                         <CaretRight 
                             weight='bold'
                         />
-                    </button>
+                    </LoadingButton>
                 </form>
             </div>
         </div>
