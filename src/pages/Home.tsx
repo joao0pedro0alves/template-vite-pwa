@@ -20,7 +20,7 @@ export function Home() {
                     alt="Logo"
                 />
                 <span className="mb-4 block sm:text-lg text-zinc-400 text-center">
-                    Bem vindo(a) <span className='text-emerald-500 font-semibold'>{user.name}</span>, escolha uma operação.
+                    Bem vindo(a) <span className='text-emerald-500 font-semibold'>{user.name}</span>, <br/> escolha uma operação.
                 </span>
 
                 <div className="flex flex-col gap-3">

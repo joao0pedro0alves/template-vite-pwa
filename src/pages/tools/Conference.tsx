@@ -23,7 +23,7 @@ const conferenceLabels: Record<Operation, string> = {
 export function Conference() {
     const [activeStep, setActiveStep] = useState<Operation>(Operation.Open)
     const [transactions, setTransactions] = useState<Transaction[]>([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const documentNumberRef = useRef<HTMLInputElement>()
     const labelCodeRef = useRef<HTMLInputElement>()
@@ -52,9 +52,7 @@ export function Conference() {
 
     async function call(operation: Operation) {
         setLoading(true)
-
         await updateTransactions()
-
         setLoading(false)
     }
 
@@ -118,7 +116,7 @@ export function Conference() {
                         type={isLoad ? 'number' : 'hidden'}
                     />
 
-                    <LoadingButton loading={false} type="submit">
+                    <LoadingButton loading={loading} type="submit">
                         {conferenceLabels[activeStep]}
                     </LoadingButton>
                 </form>
