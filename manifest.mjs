@@ -6,23 +6,23 @@
  * - [React implementation] @link https://vite-pwa-org.netlify.app/frameworks/react.html
  */
 export default {
-    name: 'My Awesome App',
-    short_name: 'MyApp',
-    description: 'My Awesome App description',
+    name: 'Coletor',
+    short_name: 'Coletor',
+    description: 'Modelo aplicativo coletor',
     theme_color: '#ffffff',
     icons: [
       {
-        src: 'pwa-192x192.png',
+        src: 'images/favicon/pwa-192x192.png',
         sizes: '192x192',
         type: 'image/png'
       },
       {
-        src: 'pwa-512x512.png',
+        src: 'images/favicon/pwa-512x512.png',
         sizes: '512x512',
         type: 'image/png'
       },
       {
-        src: 'pwa-512x512.png',
+        src: 'images/favicon/pwa-512x512.png',
         sizes: '512x512',
         type: 'image/png',
         purpose: 'any maskable'
