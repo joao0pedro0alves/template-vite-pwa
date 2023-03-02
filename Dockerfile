@@ -3,7 +3,7 @@
 # This stage copies the compiled JavaScript code from builder stage
 # It will also install the production package only
 #
-FROM node:14-alpine as builder
+FROM node:14-alpine
 
 WORKDIR /app
 ENV NODE_ENV=production
