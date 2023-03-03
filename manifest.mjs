@@ -1,7 +1,7 @@
 export default {
-  name: 'Coletor',
-  short_name: 'Coletor',
-  description: 'Modelo aplicativo coletor',
+  name: 'Template Vite PWA',
+  short_name: 'Template Vite PWA',
+  description: 'Your app description',
   theme_color: '#ffffff',
   icons: [
     {
