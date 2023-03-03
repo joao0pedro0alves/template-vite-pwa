@@ -9,3 +9,13 @@ services:
       - "3333:3333"
     environment:
       - NODE_ENV=production
+  nginx:
+    image: nginx:1.17.8
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./http/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./http/ssl:/etc/nginx/ssl/
+    links:
+      - app
