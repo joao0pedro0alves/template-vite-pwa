@@ -13,7 +13,7 @@ COPY package*.json ./
 RUN npm install serve -g
 RUN npm install
 
-COPY . .
+COPY dist dist
 
 EXPOSE 3333
 CMD ["npm", "run", "serve"]
