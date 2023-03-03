@@ -1,8 +1,6 @@
 import { SignOut } from 'phosphor-react'
-import { useAuth } from '../../hooks/useAuth'
 
 export function Header() {
-    const { signOut } = useAuth()
 
     return (
         <header className="bg-zinc-100 py-2 px-4 flex items-center justify-between">
@@ -15,7 +13,6 @@ export function Header() {
             </button>
 
             <button
-                onClick={signOut}
             >
                 <SignOut
                     className="hover:text-zinc-500"

@@ -19,7 +19,7 @@ http {
     access_log  /var/log/nginx/access.log  main;
 
     sendfile        on;
-    tcp_nopush     on;
+    tcp_nopush      on;
 
     keepalive_timeout  65;
 
@@ -30,10 +30,10 @@ http {
 
     server {
         listen       80;
-        server_name  coletor.localhost;
+        server_name  localhost;
 
         location / {
-            proxy_pass http://192.168.1.196:3333;
+            proxy_pass <your-application-url>;
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection 'upgrade';
@@ -41,21 +41,9 @@ http {
             proxy_cache_bypass $http_upgrade;
         }
 
-        # location /static {
-        #     alias /usr/share/nginx/html/static;
-        #     expires 1d;
-        #     add_header Cache-Control "public";
-        # }
-
-        # location /favicon.ico {
-        #     alias /usr/share/nginx/html/favicon.ico;
-        #     expires 30d;
-        #     add_header Cache-Control "public";
-        # }
-
         listen       443 ssl;
-        ssl_certificate     /etc/nginx/ssl/192.168.1.196.crt;
-        ssl_certificate_key /etc/nginx/ssl/192.168.1.196.key;
+        ssl_certificate     /etc/nginx/ssl/<your-crt>.crt;
+        ssl_certificate_key /etc/nginx/ssl/<your-key>.key;
         ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
         ssl_ciphers HIGH:!aNULL:!MD5;
     }
