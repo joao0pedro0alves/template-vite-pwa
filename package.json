@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview",
+    "build:deploy": "npm run build && docker-compose up -d --build",
+    "deploy": "docker-compose up -d",
+    "serve": "serve -s dist -p 3333"
   },
   "dependencies": {
     "@radix-ui/react-switch": "^1.0.1",
