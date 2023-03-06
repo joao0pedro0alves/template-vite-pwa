@@ -7,7 +7,7 @@ export function Header() {
             <button className="h-10 w-10 rounded-full overflow-hidden object-cover">
                 <img
                     className="w-full"
-                    src="https://gitlab.com/uploads/-/system/user/avatar/1149402/avatar.png?w=123"
+                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                     alt="Jhon doe"
                 />
             </button>
