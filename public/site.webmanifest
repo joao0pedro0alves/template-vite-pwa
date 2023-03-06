@@ -1,6 +1,6 @@
 {
-    "name": "Coletor",
-    "short_name": "Modelo aplicativo coletor",
+    "name": "Template Vite PWA",
+    "short_name": "Template Vite PWA",
     "icons": [
         {
             "src": "images/favicon/pwa-192x192.png",
