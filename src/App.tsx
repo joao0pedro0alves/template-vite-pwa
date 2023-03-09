@@ -31,7 +31,7 @@ export default function App() {
 
             <footer className='p-4 text-center bg-gray-100'>
                 <span className='text-gray-700'>
-                    Feito com ❤️ por João Alves 
+                    Feito com ❤️ por João Alves, v{import.meta.env.PACKAGE_VERSION}
                 </span>
             </footer>
         </Screen>
