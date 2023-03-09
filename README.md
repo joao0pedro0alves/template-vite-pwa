@@ -34,4 +34,4 @@ $ npm run dev
 ### Helpers
 
 - [Favicon Generator](https://realfavicongenerator.net/)
-- [Configurar certificado digital](/http/README.md)
+- [Generate and config digital certificate](/http/README.md)
