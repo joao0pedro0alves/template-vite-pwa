@@ -1,8 +1,9 @@
 # Vite PWA Template
 
 <p>
-    Template PWA usando Vite, React e Typescript. Possui a configuração do Docker pré montada, com suporte para implementação de um servidor HTTPS com certificado digital ultilizando o NGINX.
+    PWA template using Vite, React and Typescript. It has a pre-assembled Docker configuration, with support for implementing an HTTPS server with a digital certificate using NGINX.
 </p>
+
 
 # Getting start
 
@@ -33,4 +34,4 @@ $ npm run dev
 ### Helpers
 
 - [Favicon Generator](https://realfavicongenerator.net/)
-- [Configurar certificado digital](/http/README.md)
+- [Generate and config digital certificate](/http/README.md)
