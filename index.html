@@ -18,6 +18,33 @@
 <body class="bg-zinc-100 text-zinc-900">
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+  <script>
+
+    function activeWebPushNotifications() {
+
+      function randomNotification() {
+
+        const options = {
+          body: 'Click to download new app version',
+          icon: '/images/favicon/pwa-192x192.png',
+        };
+
+        new Notification('This app has a new version.', options);
+        // setTimeout(randomNotification, 30000);
+      }
+
+      Notification.requestPermission().then((result) => {
+
+        if (result === "granted") {
+          randomNotification()
+        }
+
+      })
+    }
+
+    activeWebPushNotifications()
+  </script>
+
 </body>
 
 </html>

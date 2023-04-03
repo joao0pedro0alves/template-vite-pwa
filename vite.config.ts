@@ -15,7 +15,16 @@ export default defineConfig({
                 'apple-touch-icon.png',
                 'masked-icon.svg',
             ],
+            strategies: 'injectManifest',
+            srcDir: 'src',
+            filename: 'sw.ts',
             manifest,
+            devOptions: {
+                enabled: true,
+            },
+            injectManifest: {
+                rollupFormat: 'iife'
+            }
         }),
     ],
     server: {
